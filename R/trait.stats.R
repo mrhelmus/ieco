@@ -13,6 +13,7 @@
 #' @export
 #
 
+
 trait.mean<-function(num,x){
   out<-unique(x$trait.number)
   names(out)<-out
