@@ -1,17 +1,16 @@
 #' Statistics to summarize Global Traits
-#'
+#' @name trat.stat
 #' @description Means, ranges etc. for each individual specimens measured.
 #' @param num specimen id number
 #' @param x Dataset to be parsed
 #' @details best when used with apply across a species
 #' @return the value of the identified statistic
 #' @author Matthew R. Helmus
-#' @examples None None
-#' @seealso None None
-#' @references None None
-#' @rdname trait.stats
+# @examples None None
+# @seealso None None
+# @references None None
+#' @rdname trait.stat
 #' @export
-#
 
 
 trait.mean<-function(num,x){
@@ -27,7 +26,7 @@ trait.mean<-function(num,x){
   return(out)
 }
 
-#' @rdname trait.stats
+#' @rdname trait.stat
 #' @export
 
 trait.n<-function(num,x){
@@ -41,6 +40,8 @@ trait.n<-function(num,x){
   return(out)
 }
 
+#' @rdname trait.stat
+#' @export
 
 trait.sd<-function(num,x){
   out<-unique(x$trait.number)
@@ -55,6 +56,8 @@ trait.sd<-function(num,x){
   return(out)
 }
 
+#' @rdname trait.stat
+#' @export
 
 trait.range<-function(num,x){
   out<-unique(x$trait.number)
