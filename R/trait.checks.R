@@ -1,9 +1,5 @@
-#' Statistics to summarize Global Traits
-<<<<<<< HEAD
-#' @name 
-=======
+#' Check the data for repeats and errors
 #' @name trat.check
->>>>>>> efcbc2e6ea221da864829252212bba9b92fe1d38
 #' @description basic checking functions for morphology data to see if ids match spp, misspellings etc.
 #' @param x Dataset to be parsed
 #' @param ids specimen id numbers that you want to check otherwise all in x

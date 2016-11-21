@@ -8,12 +8,14 @@
 \usage{
 readsheet.morph(tle)
 
-bindsheet.morph(sheets)
+bindsheet.morph(sheets, fnadd = TRUE)
 }
 \arguments{
+\item{tle}{character object of the title of the sheet to load}
+
 \item{sheets}{character vector of sheet titles to bind}
 
-\item{title}{character object of the title of the sheet to load}
+\item{fnadd}{add the title of the sheets as a column in the bind}
 }
 \value{
 concatenated datatable
