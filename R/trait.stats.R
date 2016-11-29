@@ -72,3 +72,30 @@ trait.range<-function(num,x){
   out<-out[order(as.numeric(names(out)))]
   return(out)
 }
+
+#' @rdname trait.stat
+#' @export
+
+specimen.mean<-function(x,ids){
+  dd<-sapply(ids,trait.mean,x=x)
+  colnames(dd)<-ids
+  return(dd)
+}
+
+#' @rdname trait.stat
+#' @export
+
+spp.mean<-function(x,ids,spp=NULL){
+  k<-specimen.mean(x,ids)
+  gad<-unique(cbind(x$species,x$specimen.id.number))
+  match(gad[,2],ids)
+  hold<-matrix(NA,dim(gad)[1],dim(k)[1])
+  rownames(hold)<-gad[,2]
+  colnames(hold)<-rownames(k)
+  ind<-match(colnames(k),rownames(hold))
+  hold[ind,]<-t(k)
+  rt<-aggregate(hold,by=list(species=gad[,1]),FUN=mean,na.rm=TRUE)
+  return(rt)
+}
+
+
