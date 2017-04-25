@@ -1,11 +1,16 @@
 Package: ieco
 Type: Package
 Title: Functions used by the integrative ecology team
-Version: 0.1.0
+Version: 0.1.1
 Author: M.R. Helmus
 Maintainer: M.R. Helmus <mrhelmus@temple.edu>
-Description: Archive of functions.
+Description: Archive of functions for: Global Traits, Global Islands etc.
 License: MIT
+Imports:
+    dplyr,
+    googlesheets,
+    tibble
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 5.0.1
+
