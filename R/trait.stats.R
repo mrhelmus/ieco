@@ -3,6 +3,7 @@
 #' @description Means, ranges etc. for each individual specimens measured.
 #' @param num specimen id number
 #' @param x Dataset to be parsed
+#' @param ids Vector of specimen id numbers
 #' @details best when used with apply across a species
 #' @return the value of the identified statistic
 #' @author Matthew R. Helmus
@@ -11,8 +12,9 @@
 # @references None None
 #' @rdname trait.stat
 #' @export
-
-
+#' @importFrom dplyr mutate
+#' @importFrom stats aggregate
+#' 
 trait.mean<-function(num,x){
   out<-unique(x$trait.number)
   names(out)<-out
@@ -85,9 +87,10 @@ specimen.mean<-function(x,ids){
 #' @rdname trait.stat
 #' @export
 
-spp.mean<-function(x,ids,spp=NULL){
-  k<-specimen.mean(x,ids)
-  gad<-unique(cbind(x$species,x$specimen.id.number))
+spp.mean<-function(x,ids){
+  xs<-x[x$specimen.id.number %in% ids,]
+  k<-specimen.mean(xs,ids)
+  gad<-unique(cbind(xs$species,xs$specimen.id.number))
   match(gad[,2],ids)
   hold<-matrix(NA,dim(gad)[1],dim(k)[1])
   rownames(hold)<-gad[,2]
