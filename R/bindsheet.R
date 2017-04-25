@@ -7,7 +7,7 @@
 #' @details bindsheet.morph assumes that sheets to bind have the same columns
 #' @return concatenated datatable
 #' @author Matthew R. Helmus
-# @examples None None
+# @examples None None TEST
 # @seealso None None
 # @references None None
 #' @rdname sheet.data
