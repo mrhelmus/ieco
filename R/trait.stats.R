@@ -6,7 +6,7 @@
 #' @param ids Vector of specimen id numbers
 #' @details best when used with apply across a species
 #' @return the value of the identified statistic
-#' @author Matthew R. Helmus
+#' @author Matthew R. Helmus TEST
 # @examples None None
 # @seealso None None
 # @references None None
