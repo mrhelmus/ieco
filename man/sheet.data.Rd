@@ -2,11 +2,11 @@
 % Please edit documentation in R/bindsheet.R
 \name{sheet.data}
 \alias{bindsheet.morph}
-\alias{readsheet.morph}
+\alias{readsheet}
 \alias{sheet.data}
 \title{General functions for googlesheet data manipulation}
 \usage{
-readsheet.morph(tle)
+readsheet(tle)
 
 bindsheet.morph(sheets, fnadd = TRUE)
 }
@@ -24,9 +24,9 @@ concatenated datatable
 concatenates sheets of similar data
 }
 \details{
-bindsheet.morph assumes that sheets to bind have the same columns
+bindsheet.morph assumes that sheets to bind have the same columns and is only for herp morphology datasheets
 }
 \author{
-Matthew R. Helmus
+Matthew R. Helmus test
 }
 
