@@ -33,8 +33,6 @@ getlet.ieco(grades, divs, full.divs = c(0, 60, 63, 67, 70, 73, 77, 80, 83, 87,
 \item{full.labels}{names of all the grades}
 
 \item{noAplus}{remove the first (A+) listed grade and assign the second (A)}
-
-\item{linear}{default assignment of subgrades by interpolation}
 }
 \value{
 the data set

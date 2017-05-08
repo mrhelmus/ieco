@@ -6,7 +6,7 @@
 #' @param fnadd add the title of the sheets as a column in the bind
 #' @details bindsheet.morph assumes that sheets to bind have the same columns and is only for herp morphology datasheets
 #' @return concatenated datatable
-#' @author Matthew R. Helmus test
+#' @author Matthew R. Helmus
 # @examples None None 
 # @seealso None None
 # @references None None

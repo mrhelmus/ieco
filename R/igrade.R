@@ -8,7 +8,7 @@
 #' @param tit Title for Figure
 #' @param breaks breaks for the histogram, default=length(grades)/3
 #' @param labels grade labels, default are the U.S.A. system of five letter grades, ABCDF 
-#' @param linear default assignment of subgrades by interpolation
+# @param linear default assignment of subgrades by interpolation
 #' @param full.divs divisions for all grades not just main grades as in div
 #' @param full.labels names of all the grades
 #' @param noAplus remove the first (A+) listed grade and assign the second (A) 

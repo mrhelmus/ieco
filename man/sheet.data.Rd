@@ -27,5 +27,5 @@ concatenates sheets of similar data
 bindsheet.morph assumes that sheets to bind have the same columns and is only for herp morphology datasheets
 }
 \author{
-Matthew R. Helmus test
+Matthew R. Helmus
 }
