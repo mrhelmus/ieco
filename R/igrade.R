@@ -16,7 +16,7 @@
 
 #' @details To remove students who do not take the test a low end cut off is used to excise any grades below that level.  Both mean, and standard deviations are shown as well as median and quartiles.
 #' @return the data set 
-#' @author Jonathan M. Lees from the ProfessR package, with edits by M.R. Helmus
+#' @author Jonathan M. Lees from the ProfessR package, with edits by M.R. Helmus tst
 #' @examples 
 #' g = rnorm(n=130, m=82, sd=10)
 #' g[g>100] = 100
