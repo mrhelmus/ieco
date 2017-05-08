@@ -22,4 +22,3 @@ returns a matrix with species, specimen id, and location for each tip on a tree
 \author{
 Matthew R. Helmus
 }
-
