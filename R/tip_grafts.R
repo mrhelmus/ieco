@@ -5,13 +5,14 @@
 #' @param tree phylgeny of class \code{\link[ape]{phylo}}
 #' @param addtip name of the tip to add
 #' @param where.tip name of the tip 
+#' @param where.nodes vector of two node numbers to insert the tip between 
 #' @return a \code{\link[ape]{phylo}} with the grafted tip
 #' @author Matthew R. Helmus
 # @examples None None num<
 #' @seealso \code{\link[phytools]{bind.tip}} \code{\link[ape]{bind.tree}}
 # @references None None
-# @importFrom phytools 
-#' @importFrom ape read.tree bind.tree which.edge
+#' @importFrom geiger tips 
+#' @importFrom ape read.tree bind.tree which.edge dist.nodes
 
 #' @rdname tip_grafts
 #' @export
@@ -28,5 +29,22 @@ tipXtip<-function(tree,addtip,where.tip=NULL){
   txt<-paste("(",addtip,":",nedg,");",sep="")
   add<-read.tree(text=txt)
   nieuw<-bind.tree(tree,add,where=foctip,position=nedg)
+  return(nieuw)
+}
+
+#' @rdname tip_grafts
+#' @export
+
+tipXnode<-function(tree,addtip,where.nodes=NULL){
+  emat<-tree$edge
+  elen<-tree$edge.length[apply(emat,1,paste,collapse="")==paste(where.nodes,collapse="")]
+  nedg<-elen/2
+  tps<-tips(tree,where.nodes[2])
+  ind<-sapply(tps,match,tree$tip)
+  kl<-dist.nodes(tree)[where.nodes[2],ind]
+  nedgadd<-mean(kl)+nedg
+  txt<-paste("(",addtip,":",nedgadd,");",sep="")
+  add<-read.tree(text=txt)
+  nieuw<-bind.tree(tree,add,where=where.nodes[2],position=nedg)
   return(nieuw)
 }

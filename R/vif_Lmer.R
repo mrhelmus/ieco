@@ -10,6 +10,7 @@
 #' @rdname vif_lmer
 #' @export
 #' @importFrom lme4 fixef
+#' @importFrom stats vcov
 
 vif.mer <- function (fit) {
   ## adapted from rms::vif

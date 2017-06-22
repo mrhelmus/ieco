@@ -3,9 +3,12 @@
 \name{tip_grafts}
 \alias{tip_grafts}
 \alias{tipXtip}
+\alias{tipXnode}
 \title{Grafts tips on phylogenies}
 \usage{
 tipXtip(tree, addtip, where.tip = NULL)
+
+tipXnode(tree, addtip, where.nodes = NULL)
 }
 \arguments{
 \item{tree}{phylgeny of class \code{\link[ape]{phylo}}}
@@ -13,6 +16,8 @@ tipXtip(tree, addtip, where.tip = NULL)
 \item{addtip}{name of the tip to add}
 
 \item{where.tip}{name of the tip}
+
+\item{where.nodes}{vector of two node numbers to insert the tip between}
 }
 \value{
 a \code{\link[ape]{phylo}} with the grafted tip

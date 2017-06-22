@@ -31,6 +31,8 @@
 #' D1 = do.grades.ieco(g, divs=divs, tit="GEOL 105 Exam 1")
 # @seealso None None
 # @references None None
+#' @importFrom graphics hist points axis boxplot abline box locator mtext par text
+#' @importFrom stats var
 #' @rdname igrade
 #' @export
 
