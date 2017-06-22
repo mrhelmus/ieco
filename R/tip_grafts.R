@@ -57,7 +57,7 @@ tipXnode<-function(tree,addtip,where.nodes=NULL){
 #' @export
 
 treeXnode<-function(tree,addtree,where.nodes=NULL,tip.out="tip.out"){
-  addtree.o<-addtree
+  addtree.<-addtree.o<-addtree
   if(!any(addtree$tip.label==tip.out)){stop("must supply a tree with a tip labled as in tip.out")}
   if(Ntip(addtree)<3){stop("must supply tree with at least three tips one labeld as supplied in tip.out that will be dropped. For one species additions, use tipXnode")}
   emat<-tree$edge
@@ -67,9 +67,12 @@ treeXnode<-function(tree,addtree,where.nodes=NULL,tip.out="tip.out"){
   ind<-sapply(tps,match,tree$tip)
   kl<-dist.nodes(tree)[where.nodes[2],ind]
   nedgadd<-mean(kl)+nedg
-  addtree.<-ladderize(addtree, right = FALSE)
-  addtree.$edge.length[2]<-nedgadd-sort(branching.times(addtree.),decreasing = TRUE)[2]
+  
+  #addtree.<-ladderize(addtree, right = FALSE)
+  stm<-c(1+Ntip(addtree),2+Ntip(addtree))
+  stm.ind<-which(apply(addtree.$edge, 1, function(x) all(x == stm)))
+  addtree.$edge.length[stm.ind]<-nedgadd-sort(branching.times(addtree.),decreasing = TRUE)[2]
   nieuw<-bind.tree(tree,addtree.,where=where.nodes[2],position=nedg)
   nieuw<-drop.tip(nieuw,tip.out)
-  return(nieuw)
+  return(reorder(nieuw,"pruningwise"))
 }
