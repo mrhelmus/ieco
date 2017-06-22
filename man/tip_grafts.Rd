@@ -4,27 +4,39 @@
 \alias{tip_grafts}
 \alias{tipXtip}
 \alias{tipXnode}
+\alias{treeXnode}
 \title{Grafts tips on phylogenies}
 \usage{
 tipXtip(tree, addtip, where.tip = NULL)
 
 tipXnode(tree, addtip, where.nodes = NULL)
+
+treeXnode(tree, addtree, where.nodes = NULL, tip.out = "tip.out")
 }
 \arguments{
-\item{tree}{phylgeny of class \code{\link[ape]{phylo}}}
+\item{tree}{phylgeny of class \code{\link[ape]{phylo}}, this is the starting tree}
 
 \item{addtip}{name of the tip to add}
 
 \item{where.tip}{name of the tip}
 
 \item{where.nodes}{vector of two node numbers to insert the tip between}
+
+\item{addtree}{phylgeny of class \code{\link[ape]{phylo}} to add}
+
+\item{tip.out}{tip label of the outgroup tip that defines the stem of the clade to be grafted}
 }
 \value{
 a \code{\link[ape]{phylo}} with the grafted tip
 }
 \description{
-Places tips where you want a tip to go on a phylogeny. These functions are good for adding missing taxa in ecophylogenetic analyses when you have a good phylogeny, and only need to graft a few missing taxa with a good hypothesis as to where they should go.
+Places tips and clades where you want on a phylogeny. These functions are good for adding missing taxa in ecophylogenetic analyses when you have a good phylogeny, and only need to graft a few missing taxa with a good hypothesis as to where they should go.
+
 \code{tipXtip} adds a tip halfway the distance between a supplied tip and its MRCA.
+
+\code{tipXnode} adds a tip halfway the distance between a supplied set of nodes that define one edge
+
+\code{treeXnode} adds a clade halfway the distance between a supplied set of nodes that define one edge
 }
 \seealso{
 \code{\link[phytools]{bind.tip}} \code{\link[ape]{bind.tree}}

@@ -33,6 +33,7 @@
 # @references None None
 #' @importFrom graphics hist points axis boxplot abline box locator mtext par text
 #' @importFrom stats var
+#' @importFrom grDevices rgb
 #' @rdname igrade
 #' @export
 
