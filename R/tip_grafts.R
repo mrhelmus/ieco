@@ -58,7 +58,7 @@ tipXnode<-function(tree,addtip,where.nodes=NULL){
 
 treeXnode<-function(tree,addtree,where.nodes=NULL,tip.out="tip.out"){
   addtree.<-addtree.o<-addtree
-  if(!any(addtree$tip.label==tip.out)){stop("must supply a tree with a tip labled as in tip.out")}
+  if(!any(addtree$tip.label==tip.out)){stop("must supply addtree with a tip labled as in tip.out")}
   if(Ntip(addtree)<3){stop("must supply tree with at least three tips one labeld as supplied in tip.out that will be dropped. For one species additions, use tipXnode")}
   emat<-tree$edge
   elen<-tree$edge.length[apply(emat,1,paste,collapse="")==paste(where.nodes,collapse="")]
