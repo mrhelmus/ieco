@@ -16,7 +16,7 @@
 #' @seealso \code{\link[phytools]{bind.tip}} \code{\link[ape]{bind.tree}}
 # @references None None
 #' @importFrom geiger tips 
-#' @importFrom ape read.tree bind.tree which.edge dist.nodes branching.times drop.tip ladderize Ntip
+#' @importFrom ape read.tree reorder write.tree bind.tree which.edge dist.nodes branching.times drop.tip Ntip
 
 #' @rdname tip_grafts
 #' @export
@@ -74,5 +74,20 @@ treeXnode<-function(tree,addtree,where.nodes=NULL,tip.out="tip.out"){
   addtree.$edge.length[stm.ind]<-nedgadd-sort(branching.times(addtree.),decreasing = TRUE)[2]
   nieuw<-bind.tree(tree,addtree.,where=where.nodes[2],position=nedg)
   nieuw<-drop.tip(nieuw,tip.out)
-  return(reorder(nieuw,"pruningwise"))
+  nieuw<-reorder((read.tree(text=write.tree(nieuw))),order = "prune")
+  return(nieuw)
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
