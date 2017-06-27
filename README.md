@@ -1,4 +1,4 @@
-# iEco Package
+# iEco R Package
 *Functions for integrative ecology research*
 
 Authored by [The Integrative Ecology Lab at Temple University](https://www.iecolab.org "iEco Homepage")
