@@ -5,6 +5,7 @@
 \alias{tipXtip}
 \alias{tipXnode}
 \alias{treeXnode}
+\alias{tree_scale}
 \title{Grafts tips on phylogenies}
 \usage{
 tipXtip(tree, addtip, where.tip = NULL)
@@ -12,6 +13,8 @@ tipXtip(tree, addtip, where.tip = NULL)
 tipXnode(tree, addtip, where.nodes = NULL)
 
 treeXnode(tree, addtree, where.nodes = NULL, tip.out = "tip.out")
+
+tree_scale(tree, scale)
 }
 \arguments{
 \item{tree}{phylgeny of class \code{\link[ape]{phylo}}, this is the starting tree}
@@ -25,6 +28,8 @@ treeXnode(tree, addtree, where.nodes = NULL, tip.out = "tip.out")
 \item{addtree}{phylgeny of class \code{\link[ape]{phylo}} to add}
 
 \item{tip.out}{tip label of the outgroup tip that defines the stem of the clade to be grafted}
+
+\item{scale}{scalar to multiply all edges of a tree}
 }
 \value{
 a \code{\link[ape]{phylo}} with the grafted tip
@@ -40,6 +45,8 @@ Places tips and clades where you want on a phylogeny. These functions are good f
 }
 \seealso{
 \code{\link[phytools]{bind.tip}} \code{\link[ape]{bind.tree}}
+
+for \code{tree_scale} see the code at \href{http://blog.phytools.org/2012/02/quicker-way-to-rescale-total-length-of.html}{Phytools Blog} and \code{\link[geiger]{rescaleTree}}
 }
 \author{
 Matthew R. Helmus

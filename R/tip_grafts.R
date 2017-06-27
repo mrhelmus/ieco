@@ -10,10 +10,12 @@
 #' @param where.tip name of the tip 
 #' @param where.nodes vector of two node numbers to insert the tip between 
 #' @param tip.out tip label of the outgroup tip that defines the stem of the clade to be grafted
+#' @param scale scalar to multiply all edges of a tree
 #' @return a \code{\link[ape]{phylo}} with the grafted tip
 #' @author Matthew R. Helmus
 # @examples None None num<
 #' @seealso \code{\link[phytools]{bind.tip}} \code{\link[ape]{bind.tree}}
+#' @seealso for \code{tree_scale} see the code at \href{http://blog.phytools.org/2012/02/quicker-way-to-rescale-total-length-of.html}{Phytools Blog} and \code{\link[geiger]{rescaleTree}}
 # @references None None
 #' @importFrom geiger tips 
 #' @importFrom ape read.tree ladderize reorder.phylo write.tree bind.tree which.edge dist.nodes branching.times drop.tip Ntip
@@ -79,9 +81,15 @@ treeXnode<-function(tree,addtree,where.nodes=NULL,tip.out="tip.out"){
   return(nieuw)
 }
 
+#' @rdname tip_grafts
+#' @export
 
-
-
+#From Revell http://blog.phytools.org/2012/02/quicker-way-to-rescale-total-length-of.html
+tree_scale<-function(tree,scale){
+  tree$edge.length<-
+    tree$edge.length/max(nodeHeights(tree)[,2])*scale
+  return(tree)
+}
 
 
 
