@@ -19,6 +19,7 @@
 # @references None None
 #' @importFrom geiger tips 
 #' @importFrom ape read.tree ladderize reorder.phylo write.tree bind.tree which.edge dist.nodes branching.times drop.tip Ntip
+#' @importFrom phytools nodeHeights
 
 #' @rdname tip_grafts
 #' @export

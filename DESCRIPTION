@@ -1,11 +1,11 @@
 Package: ieco
 Type: Package
-Title: Functions used by the integrative ecology team
-Date: June 23, 2017
-Version: 0.1.3
+Title: Functions used to perform integratice ecology research
+Date: June 28, 2017
+Version: 0.1.4
 Author: Matthew R. Helmus
 Maintainer: Matthew R. Helmus <mrhelmus@temple.edu>
-Description: Archive of functions for: Global Traits, Global Islands etc.
+Description: Integrative ecology research borrows ideas and techniques from multiple disciplines. The tools in this package facilitate integrative ecology research particularly with a focus on data wrangling for spatial and ecophylogenetic analyses.
 License: MIT + file LICENSE
 Imports:
     dplyr,
@@ -15,7 +15,8 @@ Imports:
     rgdal,
     rgeos,
     sp,
-    geiger
+    geiger,
+    phytools
 Depends:
     ape (>= 3.1-4)
 Encoding: UTF-8
