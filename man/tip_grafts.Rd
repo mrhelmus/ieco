@@ -42,6 +42,8 @@ Places tips and clades where you want on a phylogeny. These functions are good f
 \code{tipXnode} adds a tip halfway the distance between a supplied set of nodes that define one edge
 
 \code{treeXnode} adds a clade halfway the distance between a supplied set of nodes that define one edge
+
+\code{tree_scale} linear scaling of a tree, use this to change the root age of a tree to the \code{scale} parameter, while scaling all branch lengths and node ages proportional to this change. Does not change relative relationships among nodes and tips.
 }
 \seealso{
 \code{\link[phytools]{bind.tip}} \code{\link[ape]{bind.tree}}
