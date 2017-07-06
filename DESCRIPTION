@@ -1,7 +1,7 @@
 Package: ieco
 Type: Package
 Title: Functions used to perform integratice ecology research
-Date: June 28, 2017
+Date: July 6, 2017
 Version: 0.1.4
 Author: Matthew R. Helmus
 Maintainer: Matthew R. Helmus <mrhelmus@temple.edu>
