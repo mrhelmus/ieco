@@ -1,5 +1,5 @@
 #' Add and edit traits to a global traits data set
-#' @name trait.new
+#' @name new_trait
 #' @description combine or regress individual traits 
 #' @param x Dataset that traits should be added
 #' @param num specimen number
@@ -18,7 +18,7 @@
 #' @export
 #' @importFrom dplyr mutate select filter %>%
 
-tail_total<-function(num,x,newnumber=9.1,newtrait="tail total length"){
+total_tail<-function(num,x,newnumber=9.1,newtrait="tail total length"){
   send=NULL
   hold<-filter(x,specimen.id.number==num)
   condition<-hold %>% filter(trait.number==8.0) %>% select(value)
@@ -70,10 +70,10 @@ tail_total<-function(num,x,newnumber=9.1,newtrait="tail total length"){
 #' @rdname trait.new
 #' @export
 
-tail_apply<-function(ids,x,newnumber=9.1,newtrait="tail total length"){
+total_tails<-function(ids,x,newnumber=9.1,newtrait="tail total length"){
   gone<-NULL
   for(j in ids){
-   gone<-rbind(gone,tail_total(j,x,newnumber,newtrait)) 
+   gone<-rbind(gone,total_tail(j,x,newnumber,newtrait)) 
   }
   return(gone)
 }

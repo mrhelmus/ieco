@@ -7,7 +7,13 @@
 \alias{trait.sd}
 \alias{trait.range}
 \alias{specimen.mean}
+\alias{specimen.n}
+\alias{specimen.sd}
+\alias{specimen.range}
 \alias{spp.mean}
+\alias{spp.n}
+\alias{spp.sd}
+\alias{spp.range}
 \title{Statistics to summarize Global Traits}
 \usage{
 trait.mean(num, x)
@@ -20,7 +26,19 @@ trait.range(num, x)
 
 specimen.mean(x, ids)
 
+specimen.n(x, ids)
+
+specimen.sd(x, ids)
+
+specimen.range(x, ids)
+
 spp.mean(x, ids)
+
+spp.n(x, ids)
+
+spp.sd(x, ids)
+
+spp.range(x, ids)
 }
 \arguments{
 \item{num}{specimen id number}
@@ -36,7 +54,7 @@ the value of the identified statistic
 Means, ranges etc. for each individual specimens measured.
 }
 \details{
-best when used with apply across a species
+The spp functions build on the specimen functions which build on the trait functions. If you just want a data set of traits aggregated to species, use the spp functions
 }
 \author{
 Matthew R. Helmus
